@@ -24,6 +24,7 @@ local theme = lush(function()
     verylow { bg = bg, fg = cverylow },
 
     Normal          { base },
+    Cursor          { bg = opaque.mix(fg, 30) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     CursorLine      { bg = opaque.mix(fg, 4) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     CursorColumn    { CursorLine },
     Visual          { bg = opaque.mix(fg, 15) },
@@ -56,7 +57,7 @@ local theme = lush(function()
     PmenuSel     { base, fg = c1 }, -- Popup menu: selected item.
     PmenuSbar    { bg = c0, fg = opaque }, -- Popup menu: scrollbar.
     PmenuThumb   { bg = opaque, fg = c0 }, -- Popup menu: Thumb of the scrollbar.
-    
+
     -- ColorColumn  { }, -- used for the columns set with 'colorcolumn'
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- Conceal      { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
@@ -222,6 +223,7 @@ local theme = lush(function()
     -- TSURI                { }, -- Any URI like a link or email.
     -- TSVariable           { }, -- Any variable name that does not have another highlight.
     -- TSVariableBuiltin    { } -- Variable names that are defined by the languages, like `this` or `self`.
+
   }
 end)
 
