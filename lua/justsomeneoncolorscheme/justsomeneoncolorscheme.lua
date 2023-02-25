@@ -9,9 +9,9 @@ local c0 = hsluv(190, 100, 90)
 local c1 = hsluv(317, 100, 58)
 local c2 = hsluv(143, 100, 87)
 local red = hsluv(0, 100, 55)
-local cmid = fg.da(50)
+local cmid = fg.da(25)
 local clow = cmid.da(50)
-local cverylow = clow.da(50)
+local cverylow = clow.da(30)
 
 ---@diagnostic disable: undefined-global
 local theme = lush(function()
@@ -25,13 +25,14 @@ local theme = lush(function()
 
     Normal          { base },
     Cursor          { bg = opaque.mix(fg, 30) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-    CursorLine      { bg = opaque.mix(fg, 4) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorLine      { bg = opaque.mix(fg, 8) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     CursorColumn    { CursorLine },
     Visual          { bg = opaque.mix(fg, 15) },
     Whitespace      { verylow, gui = "bold" },
     Comment         { low, gui="bold" },
-    LineNr          { bg = opaque, fg = opaque.mix(fg, 10), gui = "bold" }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    CursorLineNr    { LineNr, fg = LineNr.fg.mix(fg, 20) }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    LineNr          { bg = bg, fg = cverylow, gui = "bold" },
+    CursorLineNr    { LineNr, fg = clow },
+    QuickFixLine    { CursorLine },
     Search          { bg = c2, fg = opaque.mix(fg, 20) },
     IncSearch       { bg = Search.bg.rotate(-20), fg = Search.fg.li(10) },
 
