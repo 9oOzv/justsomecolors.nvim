@@ -55,7 +55,7 @@ local theme = lush(function()
     Identifier      { base, fg = c0 }, -- (preferred) any variable name
     Statement       { base, fg = c1, gui = "bold" }, -- (preferred) any statement
     Operator        { base, fg = c1.mix(fg, 70) }, -- "sizeof", "+", "*", etc.
-    PreProc         { base, fg = c1.de(30) }, -- (preferred) generic Preprocessor
+    PreProc         { base, fg = c1.da(12) }, -- (preferred) generic Preprocessor
     Type            { base, fg = c0, gui = "bold" }, -- (preferred) int, long, char, etc.
     Special         { mid }, -- (preferred) any special symbol
 
