@@ -5,9 +5,10 @@ local hsluv = lush.hsluv
 local bg = "None"
 local opaque = hsluv(0, 0, 0)
 local fg = hsluv(0, 0, 100)
-local c0 = hsluv(215, 100, 85)
-local c1 = hsluv(317, 100, 70)
-local c2 = hsluv(143, 100, 87)
+local c0 = hsluv(230, 100, 80)
+local c1 = hsluv(307, 100, 70)
+local c2 = hsluv(330, 100, 65)
+local green = hsluv(155, 100, 88)
 local red = hsluv(0, 100, 55)
 local yellow = hsluv(88, 100, 81)
 local cmid = fg.da(25)
@@ -35,8 +36,8 @@ local theme = lush(function()
     LineNr          { bg = bg, fg = cverylow, gui = "bold" },
     CursorLineNr    { LineNr, fg = clow },
     QuickFixLine    { CursorLine },
-    Search          { bg = c2, fg = opaque.mix(fg, 20) },
-    IncSearch       { bg = Search.bg.rotate(-20), fg = Search.fg.li(10) },
+    Search          { bg = green.da(20), fg=opaque },
+    IncSearch       { bg = Search.bg.li(80), fg = opaque },
 
     NormalFloat     { base, bg = opaque.mix(fg, 3), fg = c0 }, -- Normal text in floating windows.
     DiffAdd         { base, fg = c2 }, -- diff mode: Added line |diff.txt|
@@ -50,7 +51,7 @@ local theme = lush(function()
     PmenuSbar       { bg = c0, fg = opaque }, -- Popup menu: scrollbar.
     PmenuThumb      { bg = opaque, fg = c0 }, -- Popup menu: Thumb of the scrollbar.
 
-    Constant        { base, fg = c1.ro(-20) }, -- (preferred) any constant
+    Constant        { base, fg = c2.ro(-20) }, -- (preferred) any constant
     Identifier      { base, fg = c0 }, -- (preferred) any variable name
     Statement       { base, fg = c1, gui = "bold" }, -- (preferred) any statement
     Operator        { base, fg = c1.mix(fg, 70) }, -- "sizeof", "+", "*", etc.
