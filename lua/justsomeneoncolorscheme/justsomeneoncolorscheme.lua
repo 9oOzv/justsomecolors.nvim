@@ -5,9 +5,9 @@ local hsluv = lush.hsluv
 local bg = "None"
 local opaque = hsluv(0, 0, 0)
 local fg = hsluv(0, 0, 100)
-local c0 = hsluv(215, 100, 85)
-local c1 = hsluv(317, 100, 70)
-local c2 = hsluv(143, 100, 87)
+local c0 = hsluv(275, 100, 69)
+local c1 = c0.ro(30)
+local c2 = c0.ro(-30)
 local red = hsluv(0, 100, 55)
 local yellow = hsluv(88, 100, 81)
 local cmid = fg.da(25)
@@ -50,7 +50,7 @@ local theme = lush(function()
     PmenuSbar       { bg = c0, fg = opaque }, -- Popup menu: scrollbar.
     PmenuThumb      { bg = opaque, fg = c0 }, -- Popup menu: Thumb of the scrollbar.
 
-    Constant        { base, fg = c1.ro(-20) }, -- (preferred) any constant
+    Constant        { base, fg = c2 }, -- (preferred) any constant
     Identifier      { base, fg = c0 }, -- (preferred) any variable name
     Statement       { base, fg = c1, gui = "bold" }, -- (preferred) any statement
     Operator        { base, fg = c1.mix(fg, 70) }, -- "sizeof", "+", "*", etc.
