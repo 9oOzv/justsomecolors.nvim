@@ -5,9 +5,9 @@ local hsluv = lush.hsluv
 local bg = "None"
 local opaque = hsluv(0, 0, 0)
 local fg = hsluv(0, 0, 100)
-local c0 = hsluv(230, 100, 80)
-local c1 = hsluv(307, 100, 70)
-local c2 = hsluv(330, 100, 65)
+local c0 = hsluv(227, 100, 80)
+local c1 = hsluv(307, 100, 67)
+local c2 = hsluv(330, 100, 62)
 local green = hsluv(155, 100, 88)
 local red = hsluv(0, 100, 55)
 local yellow = hsluv(88, 100, 81)
@@ -40,10 +40,12 @@ local theme = lush(function()
     IncSearch       { bg = Search.bg.li(80), fg = opaque },
 
     NormalFloat     { base, bg = opaque.mix(fg, 3), fg = c0 }, -- Normal text in floating windows.
-    DiffAdd         { base, fg = c2 }, -- diff mode: Added line |diff.txt|
+    DiffAdd         { base, fg = c0 }, -- diff mode: Added line |diff.txt|
     DiffChange      { base, fg = c1}, -- diff mode: Changed line |diff.txt|
     DiffDelete      { base, fg = red }, -- diff mode: Deleted line |diff.txt|
     ErrorMsg        { error }, -- error messages on the command line
+    Folded          { low },
+    FoldColumn      { low },
     SignColumn      { mid }, -- 'foldcolumn'
     MatchParen      { base, bg = c1, fg = c0, gui = "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     Pmenu           { base, fg = c0 }, -- Popup menu: normal item.
@@ -51,7 +53,7 @@ local theme = lush(function()
     PmenuSbar       { bg = c0, fg = opaque }, -- Popup menu: scrollbar.
     PmenuThumb      { bg = opaque, fg = c0 }, -- Popup menu: Thumb of the scrollbar.
 
-    Constant        { base, fg = c2.ro(-20) }, -- (preferred) any constant
+    Constant        { base, fg = c2 }, -- (preferred) any constant
     Identifier      { base, fg = c0 }, -- (preferred) any variable name
     Statement       { base, fg = c1, gui = "bold" }, -- (preferred) any statement
     Operator        { base, fg = c1.mix(fg, 70) }, -- "sizeof", "+", "*", etc.
