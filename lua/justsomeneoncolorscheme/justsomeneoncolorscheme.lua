@@ -63,14 +63,17 @@ local theme = lush(function()
 
     Todo            { bg = opaque.mix(fg, 5), fg = c1, gui = "bold" }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
-    DiagnosticVirtualTextError                 { fg = cverylow.saturation(red.s).hue(red.h) },
-    DiagnosticVirtualTextWarn                 { fg = clow.saturation(yellow.s).hue(yellow.h) },
-    DiagnosticVirtualTextInfo                 { fg = cverylow },
-    DiagnosticVirtualTextHint                 { fg = cverylow },
-    DiagnosticSignError                 { fg = cverylow.saturation(red.s).hue(red.h) },
-    DiagnosticSignWarn                 { fg = clow.saturation(yellow.s).hue(yellow.h) },
-    DiagnosticSignInfo                 { fg = cverylow },
-    DiagnosticSignHint                 { fg = cverylow },
+    DiagnosticVirtualTextError  { fg = cverylow.saturation(red.s).hue(red.h) },
+    DiagnosticVirtualTextWarn   { fg = clow.saturation(yellow.s).hue(yellow.h) },
+    DiagnosticVirtualTextInfo   { fg = cverylow },
+    DiagnosticVirtualTextHint   { fg = cverylow },
+    DiagnosticSignError         { fg = cverylow.saturation(red.s).hue(red.h) },
+    DiagnosticSignWarn          { fg = clow.saturation(yellow.s).hue(yellow.h) },
+    DiagnosticSignInfo          { fg = cverylow },
+    DiagnosticSignHint          { fg = cverylow },
+    DiagnosticUnderlineError    { b0ld, fg = red },
+    DiagnosticUnderlineWarn     { b0ld, fg = yellow },
+    DiagnosticUnderlineInfo     { b0ld },
 
     NotifyBackground { bg = opaque }, -- Some box appeared telling me to define this
 
